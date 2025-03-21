@@ -18,7 +18,10 @@ export default function SearchResults({ url }) {
                             </div>
                             )
                         )}
-                        {data.length === 0 && <p>Found nothing.</p>}
+                        {
+                            data.length === 0 &&
+                            <p>Found nothing.</p>
+                        }
                     </div>
                 </div>
             </div>

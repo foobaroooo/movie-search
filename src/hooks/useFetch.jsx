@@ -13,7 +13,8 @@ export default function useFetch(url) {
                 const response = await axios.get(url);
                 setData(response.data.results);
             } catch (error) {
-                console.error(error.message);
+                //console.error(error);
+                setData(error)
             }
             setLoading(false);
         }
