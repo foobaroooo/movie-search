@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import SearchResults from './components/SearchResults';
 import Search from './components/Search';
+import SearchResults from './components/SearchResults';
 
 function App() {
   const apiKey = '875ca30a293634116be3f3785e659320';
@@ -10,7 +10,6 @@ function App() {
   const [query, setQuery] = useState('')
 
   const handleQuery = (newQuery) => {
-    //console.log(url + query)
     setQuery(newQuery)
   }
 

@@ -1,24 +1,8 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import useFetch from '../hooks/useFetch';
 
 export default function SearchResults({ url }) {
-    const [loading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
-        
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true)
 
-            try {
-                const response = await axios.get(url);
-                setData(response.data.results);
-            } catch (error) {
-                console.error(error.message);
-            }
-            setLoading(false);
-        }
-        fetchData();
-    }, [url])
+    const [loading, data] = useFetch(url); 
 
     return (
         <section>
