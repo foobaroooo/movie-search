@@ -2,7 +2,7 @@ import useFetch from '../hooks/useFetch';
 
 export default function SearchResults({ url }) {
 
-    const [loading, data] = useFetch(url); 
+    const [loading, data, error] = useFetch(url); 
 
     return (
         <section>
@@ -19,8 +19,12 @@ export default function SearchResults({ url }) {
                             )
                         )}
                         {
-                            data.length === 0 &&
+                            data.length === 0 && error === null &&
                             <p>Found nothing.</p>
+                        }
+                        {
+                            error != null &&
+                            <p>{error.message}</p>     
                         }
                     </div>
                 </div>
