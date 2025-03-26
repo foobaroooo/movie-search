@@ -4,10 +4,12 @@ export default function SearchResults({ url, params }) {
 
     const [loading, data, error] = useFetch(url, params); 
 
+    // console.log(params.get('query'));
+
     return (
         <section>
         {loading && <div>Loading...</div>}
-        {!loading && (
+        {!loading && (params.get('query') != '') && (
             <div>
                 <div className="container">
                     <div className="row">
