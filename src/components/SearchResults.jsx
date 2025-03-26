@@ -1,8 +1,8 @@
 import useFetch from '../hooks/useFetch';
 
-export default function SearchResults({ url }) {
+export default function SearchResults({ url, params }) {
 
-    const [loading, data, error] = useFetch(url); 
+    const [loading, data, error] = useFetch(url, params); 
 
     return (
         <section>
