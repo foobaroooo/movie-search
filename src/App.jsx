@@ -4,7 +4,7 @@ import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 
 function App() {
-  const apiKey = '875ca30a293634116be3f3785e659320';// import.meta.env.VITE_REACT_APP_API_KEY
+  const apiKey = import.meta.env.VITE_REACT_APP_API_KEY
   const url = 'https://api.themoviedb.org/3/search/movie?'
 
   const [query, setQuery] = useState('')
